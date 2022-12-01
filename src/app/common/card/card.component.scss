@@ -1,0 +1,19 @@
+.height{
+    height: 250px;
+    width: auto;
+}
+
+.btn{
+    background-color: rgb(251, 168, 235);
+    border: none;
+    color: black;
+}
+
+.btn:hover{
+    transform: scale(1.2);
+}
+
+.card{
+    border: none;
+    box-shadow: 3px 8px 6px 8px white;
+}

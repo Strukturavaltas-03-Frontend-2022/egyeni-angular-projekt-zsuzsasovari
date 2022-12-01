@@ -1,0 +1,6 @@
+<div class="row card_field col-12 mx-4 d-flex justify-content-start">
+<div class="col-sm-6 col-lg-4 col-xl-3 mb-4 my-4" *ngFor="let product of productList| filter:(phrase$ | async) | paginate: { itemsPerPage: 20, currentPage: page}">
+  <app-card [product]="product"></app-card>
+</div>
+</div>
+<pagination-controls (pageChange)="page = $event"></pagination-controls>

@@ -1,0 +1,42 @@
+<div class="col-6 mx-auto form-group">
+    <img src="{{product.img}}" alt="" class="rounded mx-auto d-block" style="height: 300px; width:auto;" *ngIf="product.id !== -1">
+</div>
+<div class="col-6 mx-auto">
+<label for="brand" class="form-label">Márka</label>
+<input class="form-control" list="datalistOptions" id="brand" placeholder="La roche posay" type="text" [(ngModel)]="product.brand" required>
+<datalist id="datalistOptions">
+  <option value="Bioderma">
+  <option value="Eucerin">
+  <option value="CeraVe">
+  <option value="La roche posay">
+  <option value="Vichy">
+  <option value="Uriage">
+</datalist>
+<div class="mb-3">
+    <label for="name" class="form-label">Termék neve</label>
+    <input type="text" class="form-control" id="name" placeholder="Lipikar..." [(ngModel)]="product.name" required>
+  </div>
+  <div class="mb-3">
+    <label for="description" class="form-label">Termékleírás</label>
+    <textarea class="form-control" id="description" rows="3" [(ngModel)]="product.description" required></textarea>
+  </div>
+  <label for="exampleDataList" class="form-label">Kategória kiválasztása</label>
+<input class="form-control" list="datalistOptions1" id="exampleDataList" placeholder="Type to search..." type="number" [(ngModel)]="product.categoryId" required>
+<datalist id="datalistOptions1">
+  <option value="1">
+  <option value="2">
+  <option value="3">
+  <option value="4">
+  <option value="5">
+</datalist>
+  <div class="mt-3">
+    <label for="pure">Babák számára használható:</label>
+    <input id="pure" type="checkbox" style="width:30px; height: 30px;" class="mx-2 form-check-input" [(ngModel)]="product.pure">
+  </div>
+  <div class="mb-3 mt-3">
+    <label for="formFile" class="form-label">Fénykép feltöltése</label>
+    <input class="form-control" type="file" id="formFile" (change)="imginputchange($event)" required>
+  </div>
+  <button class="btn btn-outline-dark" (click)="onSave()">Mentés</button>
+  <button class="btn btn-outline-dark mx-2" (click)="onDelete()" *ngIf="product.id !== -1">Törlés</button>
+</div>
